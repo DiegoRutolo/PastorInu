@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c64bwpqrhywco"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmkx1"]
+
+[node name="Muro" type="StaticBody2D"]
+scale = Vector2(2.5245, 2.58895)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lmkx1")

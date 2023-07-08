@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnar3ua0ip001"]
+
+[ext_resource type="Script" path="res://escenas/actores/oveja_basica.gd" id="1_ea186"]
+[ext_resource type="Texture2D" uid="uid://cbsglmuyqgrjm" path="res://sprites/Sheep.webp" id="2_glbq0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_moraw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ae5s"]
+
+[node name="OvejaBasica" type="CharacterBody2D"]
+script = ExtResource("1_ea186")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.150457, 0.150457)
+texture = ExtResource("2_glbq0")
+
+[node name="DeteccionArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeteccionArea2D"]
+scale = Vector2(22.0993, 21.1468)
+shape = SubResource("CircleShape2D_moraw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.45938, 2.45938)
+shape = SubResource("CircleShape2D_0ae5s")
+
+[connection signal="area_entered" from="DeteccionArea2D" to="." method="_on_deteccion_area_2d_area_entered"]
+[connection signal="area_exited" from="DeteccionArea2D" to="." method="_on_deteccion_area_2d_area_exited"]
