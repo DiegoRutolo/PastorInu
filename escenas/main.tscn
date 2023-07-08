@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://pcgagu4ntkis"]
+
+[ext_resource type="PackedScene" uid="uid://dr4epnvvmh5gf" path="res://escenas/niveles/nivel_0.tscn" id="1_teaf8"]
+[ext_resource type="PackedScene" uid="uid://ca2mtt0y6enhj" path="res://escenas/interfaz/hud.tscn" id="2_omqjk"]
+
+[node name="Main" type="Node"]
+
+[node name="World" type="Node" parent="."]
+
+[node name="Nivel0" parent="World" instance=ExtResource("1_teaf8")]
+
+[node name="HUD" parent="." instance=ExtResource("2_omqjk")]

@@ -21,11 +21,11 @@ position = Vector2(599, 660)
 scale = Vector2(60, 2.589)
 
 [node name="Muro3" parent="Muros" instance=ExtResource("2_4v7n2")]
-position = Vector2(-6, 281)
+position = Vector2(-6, 314)
 scale = Vector2(2.524, 40)
 
 [node name="Muro4" parent="Muros" instance=ExtResource("2_4v7n2")]
-position = Vector2(1172, 302)
+position = Vector2(1172, 326)
 scale = Vector2(2.524, 40)
 
 [node name="Ovejas" type="Node" parent="."]
@@ -40,4 +40,4 @@ position = Vector2(603, 358)
 position = Vector2(795, 480)
 
 [node name="OvejaDeambulante" parent="." instance=ExtResource("4_ocd3i")]
-position = Vector2(339, 401)
+position = Vector2(289, 389)
