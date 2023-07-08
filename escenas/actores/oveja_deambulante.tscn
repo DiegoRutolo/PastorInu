@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://khpsghvb7lc6"]
+
+[ext_resource type="PackedScene" uid="uid://dnar3ua0ip001" path="res://escenas/actores/oveja_basica.tscn" id="1_nrkbg"]
+[ext_resource type="Script" path="res://escenas/actores/oveja_deambulante.gd" id="2_elcie"]
+
+[node name="OvejaDeambulante" instance=ExtResource("1_nrkbg")]
+script = ExtResource("2_elcie")
+v_deamb = 40
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(0, 0.933333, 0.937255, 1)
+
+[node name="DeteccionArea2D" parent="." index="1"]
+visible = false

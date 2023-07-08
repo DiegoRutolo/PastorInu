@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr4epnvvmh5gf"]
+[gd_scene load_steps=5 format=3 uid="uid://dr4epnvvmh5gf"]
 
 [ext_resource type="PackedScene" uid="uid://dnar3ua0ip001" path="res://escenas/actores/oveja_basica.tscn" id="1_rasvq"]
 [ext_resource type="PackedScene" uid="uid://cerg5en7hexci" path="res://escenas/actores/perro_basico.tscn" id="2_0sldp"]
 [ext_resource type="PackedScene" uid="uid://c64bwpqrhywco" path="res://escenas/objetos/muro.tscn" id="2_4v7n2"]
+[ext_resource type="PackedScene" uid="uid://khpsghvb7lc6" path="res://escenas/actores/oveja_deambulante.tscn" id="4_ocd3i"]
 
 [node name="Nivel0" type="Node"]
 
@@ -37,3 +38,6 @@ position = Vector2(603, 358)
 
 [node name="OvejaBasica3" parent="Ovejas" instance=ExtResource("1_rasvq")]
 position = Vector2(795, 480)
+
+[node name="OvejaDeambulante" parent="." instance=ExtResource("4_ocd3i")]
+position = Vector2(339, 401)
