@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://3uicalhnbigl"]
+
+[sub_resource type="GDScript" id="GDScript_mkdhk"]
+script/source = "extends Area2D
+
+signal entra_oveja
+signal sale_oveja
+
+func _on_oveja_entered(oveja):
+	if oveja.is_in_group(\"ovejas\"):
+		emit_signal(\"entra_oveja\")
+
+func _on_oveja_exited(oveja):
+	if oveja.is_in_group(\"ovejas\"):
+		emit_signal(\"sale_oveja\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pv7ss"]
+
+[node name="Cercado" type="Area2D"]
+script = SubResource("GDScript_mkdhk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pv7ss")
+
+[connection signal="body_entered" from="." to="." method="_on_oveja_entered"]
+[connection signal="body_exited" from="." to="." method="_on_oveja_exited"]

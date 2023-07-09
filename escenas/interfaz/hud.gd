@@ -1,11 +1,22 @@
 extends CanvasLayer
 
+var num_ovejas_dentro
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	num_ovejas_dentro = 0
+	update_texto()
 
+func update_texto():
+	if (num_ovejas_dentro > 0):
+		$OvejasGuardadas.text = str(num_ovejas_dentro)
+	else:
+		$OvejasGuardadas.text = ""
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func mete_oveja():
+	num_ovejas_dentro += 1
+	update_texto()
+
+func quita_oveja():
+	num_ovejas_dentro -= 1
+	update_texto()

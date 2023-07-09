@@ -1,32 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://ca2mtt0y6enhj"]
 
-[sub_resource type="GDScript" id="GDScript_3sv4y"]
-script/source = "extends CanvasLayer
-
-var num_ovejas_dentro
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	num_ovejas_dentro = 0
-	update_texto()
-
-func update_texto():
-	if (num_ovejas_dentro > 0):
-		$OvejasGuardadas.text = str(num_ovejas_dentro)
-	else:
-		$OvejasGuardadas.text = \"\"
-
-func mete_oveja():
-	num_ovejas_dentro += 1
-	update_texto()
-
-func quita_oveja():
-	num_ovejas_dentro -= 1
-	update_texto()
-"
+[ext_resource type="Script" path="res://escenas/interfaz/hud.gd" id="1_iddxc"]
 
 [node name="HUD" type="CanvasLayer"]
-script = SubResource("GDScript_3sv4y")
+script = ExtResource("1_iddxc")
 
 [node name="OvejasGuardadas" type="Label" parent="."]
 anchors_preset = 1
