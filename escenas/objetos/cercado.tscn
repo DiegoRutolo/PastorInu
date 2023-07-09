@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://3uicalhnbigl"]
+[gd_scene load_steps=4 format=3 uid="uid://3uicalhnbigl"]
+
+[ext_resource type="Texture2D" uid="uid://dawardtqinn3a" path="res://sprites/grass_1.png" id="1_r6jq0"]
 
 [sub_resource type="GDScript" id="GDScript_mkdhk"]
 script/source = "extends Area2D
@@ -21,7 +23,14 @@ func _on_oveja_exited(oveja):
 script = SubResource("GDScript_mkdhk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6.93581, 6.93581)
 shape = SubResource("RectangleShape2D_pv7ss")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+scale = Vector2(0.217649, 0.217649)
+texture = ExtResource("1_r6jq0")
 
 [connection signal="body_entered" from="." to="." method="_on_oveja_entered"]
 [connection signal="body_exited" from="." to="." method="_on_oveja_exited"]

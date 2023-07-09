@@ -46,5 +46,5 @@ position = Vector2(795, 480)
 position = Vector2(289, 389)
 
 [node name="Cercado" parent="." instance=ExtResource("6_2nc04")]
-position = Vector2(1046, 515)
-scale = Vector2(9.28542, 11.1912)
+position = Vector2(1053, 542)
+scale = Vector2(1.33596, 1.33596)

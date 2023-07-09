@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c64bwpqrhywco"]
+[gd_scene load_steps=3 format=3 uid="uid://c64bwpqrhywco"]
+
+[ext_resource type="Texture2D" uid="uid://dkk7d3w2syw0d" path="res://sprites/cobblestone.png" id="1_ktgo6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmkx1"]
 
@@ -6,4 +8,11 @@
 scale = Vector2(2.5245, 2.58895)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.73448, 1.73448)
 shape = SubResource("RectangleShape2D_lmkx1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_repeat = 2
+scale = Vector2(0.0881221, 0.0881221)
+texture = ExtResource("1_ktgo6")
