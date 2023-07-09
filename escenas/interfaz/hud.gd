@@ -1,22 +1,13 @@
 extends CanvasLayer
 
-var num_ovejas_dentro
+var num_ovejas_dentro: int = 0:
+	get:
+		return num_ovejas_dentro
+	set(val):
+		if (val >= 0):
+			num_ovejas_dentro = val
+			$OvejasGuardadas.text = str(num_ovejas_dentro)
+		else:
+			num_ovejas_dentro = 0
+			$OvejasGuardadas.text = ""
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	num_ovejas_dentro = 0
-	update_texto()
-
-func update_texto():
-	if (num_ovejas_dentro > 0):
-		$OvejasGuardadas.text = str(num_ovejas_dentro)
-	else:
-		$OvejasGuardadas.text = ""
-
-func mete_oveja():
-	num_ovejas_dentro += 1
-	update_texto()
-
-func quita_oveja():
-	num_ovejas_dentro -= 1
-	update_texto()
