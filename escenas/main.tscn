@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://pcgagu4ntkis"]
+[gd_scene load_steps=4 format=3 uid="uid://beop0qimjhuj2"]
 
 [ext_resource type="Script" path="res://escenas/main.gd" id="1_c05v4"]
-[ext_resource type="PackedScene" uid="uid://dr4epnvvmh5gf" path="res://escenas/niveles/nivel_0.tscn" id="1_teaf8"]
+[ext_resource type="PackedScene" uid="uid://dcenq78bpwmjl" path="res://escenas/niveles/nivel_01.tscn" id="2_6k27v"]
 [ext_resource type="PackedScene" uid="uid://ca2mtt0y6enhj" path="res://escenas/interfaz/hud.tscn" id="2_omqjk"]
 
 [node name="Main" type="Node"]
@@ -9,6 +9,6 @@ script = ExtResource("1_c05v4")
 
 [node name="World" type="Node" parent="."]
 
-[node name="Nivel0" parent="World" instance=ExtResource("1_teaf8")]
+[node name="Nivel_01" parent="World" instance=ExtResource("2_6k27v")]
 
 [node name="HUD" parent="." instance=ExtResource("2_omqjk")]

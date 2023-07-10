@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://blt7fyylkj3ko"]
+
+[ext_resource type="PackedScene" uid="uid://buc6rp3cy8ka4" path="res://escenas/niveles/nivel_base.tscn" id="1_7dn58"]
+[ext_resource type="PackedScene" uid="uid://c64bwpqrhywco" path="res://escenas/objetos/muro.tscn" id="2_ddt1n"]
+[ext_resource type="PackedScene" uid="uid://dnar3ua0ip001" path="res://escenas/actores/oveja_basica.tscn" id="3_a4s6w"]
+
+[node name="Nivel_02" instance=ExtResource("1_7dn58")]
+
+[node name="PerroBasico" parent="." index="0"]
+position = Vector2(175, 127)
+
+[node name="Muro" parent="Muros" index="0" instance=ExtResource("2_ddt1n")]
+position = Vector2(-163, 326)
+scale = Vector2(11.7831, 19.2367)
+
+[node name="Muro5" parent="Muros" index="1" instance=ExtResource("2_ddt1n")]
+position = Vector2(834, 393)
+scale = Vector2(2.90673, 13.8626)
+
+[node name="Muro6" parent="Muros" index="2" instance=ExtResource("2_ddt1n")]
+position = Vector2(531, 277)
+scale = Vector2(2.90673, 13.8626)
+
+[node name="Muro2" parent="Muros" index="3" instance=ExtResource("2_ddt1n")]
+position = Vector2(1339, 333)
+scale = Vector2(11.7831, 19.2367)
+
+[node name="Muro3" parent="Muros" index="4" instance=ExtResource("2_ddt1n")]
+position = Vector2(578, -175)
+scale = Vector2(33.2234, 13.6912)
+
+[node name="Muro4" parent="Muros" index="5" instance=ExtResource("2_ddt1n")]
+position = Vector2(593, 869)
+scale = Vector2(33.2234, 13.6912)
+
+[node name="OvejaBasica" parent="Ovejas" index="0"]
+position = Vector2(168, 535)
+
+[node name="OvejaBasica2" parent="Ovejas" index="1" instance=ExtResource("3_a4s6w")]
+position = Vector2(300, 464)
+
+[node name="Cercado" parent="." index="3"]
+position = Vector2(1016, 523)

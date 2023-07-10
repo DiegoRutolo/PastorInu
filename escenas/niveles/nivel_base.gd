@@ -4,7 +4,7 @@ signal update_ovejas_guardadas(num)
 signal win
 
 @export
-var num_ganador = 4
+var num_ganador: int
 
 var ovejas_guardadas = 0:
 	get:
@@ -17,6 +17,9 @@ var ovejas_guardadas = 0:
 func _ready():
 	$Cercado.entra_oveja.connect(_entra_oveja)
 	$Cercado.sale_oveja.connect(_sale_oveja)
+	
+	if num_ganador == null or num_ganador <= 0:
+		num_ganador = $Ovejas.get_child_count()
 
 func _entra_oveja():
 	ovejas_guardadas += 1

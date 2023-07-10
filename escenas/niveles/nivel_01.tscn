@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcenq78bpwmjl"]
+
+[ext_resource type="PackedScene" uid="uid://buc6rp3cy8ka4" path="res://escenas/niveles/nivel_base.tscn" id="1_khe35"]
+[ext_resource type="PackedScene" uid="uid://c64bwpqrhywco" path="res://escenas/objetos/muro.tscn" id="2_3uao5"]
+
+[node name="Nivel_01" instance=ExtResource("1_khe35")]
+
+[node name="Muro" parent="Muros" index="0" instance=ExtResource("2_3uao5")]
+position = Vector2(-223, 344)
+scale = Vector2(14.4056, 21.1459)
+
+[node name="Muro2" parent="Muros" index="1" instance=ExtResource("2_3uao5")]
+position = Vector2(1381, 326)
+scale = Vector2(14.4056, 21.1459)
+
+[node name="Muro3" parent="Muros" index="2" instance=ExtResource("2_3uao5")]
+position = Vector2(594, -264)
+scale = Vector2(35.5682, 16.3422)
+
+[node name="Muro4" parent="Muros" index="3" instance=ExtResource("2_3uao5")]
+position = Vector2(587, 922)
+scale = Vector2(35.5682, 16.3422)
