@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_k6off"]
 
 [node name="Oveja" type="CharacterBody2D"]
-position = Vector2(431, 239)
+motion_mode = 1
 script = ExtResource("1_47gma")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,5 +18,6 @@ scale = Vector2(3.75781, 3.75781)
 shape = SubResource("CircleShape2D_k6off")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 4.39775
 
 [connection signal="timeout" from="Timer" to="." method="select_new_target"]

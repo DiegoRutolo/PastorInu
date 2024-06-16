@@ -26,23 +26,15 @@ enum Accion {NADA, LADRAR, GRUÑIR}
 var accion: Accion = Accion.NADA
 
 # Posición en la que el jugador hace click para moverse
-var click_pos: Vector2:
-	get:
-		return click_pos
-	set(val):
-		click_pos = val
-		#print_debug("click_pos: %v" % click_pos)
+var click_pos: Vector2
 
 # Posición hacia la que el perro intenta moverse.
-var target_pos: Vector2:
-	get:
-		return target_pos
-	set(val):
-		target_pos = val
-		#print_debug("target_pos: %v" % target_pos)
+var target_pos: Vector2
 
 func _ready():
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+	click_pos = position
+	target_pos = position
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("right_click"):

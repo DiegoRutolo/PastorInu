@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://c370i35khw8p2"]
+
+[ext_resource type="PackedScene" uid="uid://q3b60mdcw7au" path="res://escenas/actores/player/player.tscn" id="1_66n7h"]
+[ext_resource type="PackedScene" uid="uid://dgg24eyk4aasu" path="res://escenas/actores/ovejas/oveja.tscn" id="2_orb01"]
+
+[node name="Nivel0" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_66n7h")]
+position = Vector2(235, 195)
+
+[node name="Ovejas" type="Node2D" parent="."]
+position = Vector2(860, 361)
+
+[node name="Oveja" parent="Ovejas" node_paths=PackedStringArray("perro") instance=ExtResource("2_orb01")]
+perro = NodePath("../../Player")
+
+[node name="Oveja2" parent="Ovejas" node_paths=PackedStringArray("perro") instance=ExtResource("2_orb01")]
+position = Vector2(94, 22)
+perro = NodePath("../../Player")
+
+[node name="Oveja3" parent="Ovejas" node_paths=PackedStringArray("perro") instance=ExtResource("2_orb01")]
+position = Vector2(78, -66)
+perro = NodePath("../../Player")
+
+[node name="Oveja4" parent="Ovejas" node_paths=PackedStringArray("perro") instance=ExtResource("2_orb01")]
+position = Vector2(-9, -89)
+perro = NodePath("../../Player")
+
+[node name="Oveja5" parent="Ovejas" node_paths=PackedStringArray("perro") instance=ExtResource("2_orb01")]
+position = Vector2(-87, -35)
+perro = NodePath("../../Player")
+
+[node name="Oveja6" parent="Ovejas" node_paths=PackedStringArray("perro") instance=ExtResource("2_orb01")]
+position = Vector2(-75, 64)
+perro = NodePath("../../Player")
+
+[node name="Oveja7" parent="Ovejas" node_paths=PackedStringArray("perro") instance=ExtResource("2_orb01")]
+position = Vector2(22, 89)
+perro = NodePath("../../Player")
