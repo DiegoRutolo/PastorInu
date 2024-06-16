@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://6gnin4efsvn8"]
+
+[ext_resource type="Theme" uid="uid://s0edko7gppuj" path="res://assets/themes/menu_theme.tres" id="1_pwfxc"]
+[ext_resource type="Texture2D" uid="uid://w0xkwprwxdu5" path="res://assets/sprites/grass_1.png" id="2_xsxwh"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pwfxc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.348988, 0.479793, 0.515639, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xsxwh")
+stretch_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 70
+text = "PastorInu"
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("1_pwfxc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Niveles" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Niveles"
+
+[node name="Aleatorios" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Aleatorios"
+
+[node name="Opciones" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Opciones"
+
+[node name="Salir" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Salir"

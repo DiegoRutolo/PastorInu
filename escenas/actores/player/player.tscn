@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://q3b60mdcw7au"]
+
+[ext_resource type="Texture2D" uid="uid://5sfk18wskcws" path="res://assets/sprites/dogHead_1.jpg" id="1_4k28g"]
+[ext_resource type="Script" path="res://escenas/actores/player/player.gd" id="1_8a0am"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bt775"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_8a0am")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.133857, 0.133857)
+texture = ExtResource("1_4k28g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.21087, 3.21087)
+shape = SubResource("CircleShape2D_bt775")

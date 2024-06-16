@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgg24eyk4aasu"]
+
+[ext_resource type="Texture2D" uid="uid://di5q3tvn1lei" path="res://assets/sprites/Sheep.webp" id="1_7begv"]
+[ext_resource type="Script" path="res://escenas/actores/ovejas/oveja.gd" id="1_47gma"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k6off"]
+
+[node name="Oveja" type="CharacterBody2D"]
+position = Vector2(431, 239)
+script = ExtResource("1_47gma")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.239192, 0.239192)
+texture = ExtResource("1_7begv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.75781, 3.75781)
+shape = SubResource("CircleShape2D_k6off")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="select_new_target"]
