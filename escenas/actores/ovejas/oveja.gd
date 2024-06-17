@@ -6,7 +6,7 @@ const VEL_ANDAR = 40
 # Velocidad al correr
 const VEL_CORRER = 85
 
-enum Movimiento {QUIETO, ANDAR, HUIR}
+enum Movimiento {QUIETO, ANDAR, HUIR, DORMIR}
 var movimineto: Movimiento = Movimiento.QUIETO
 
 # Distancia a partir de la cual se considera que llegó al objetivo
@@ -37,15 +37,16 @@ func _ready():
 
 func _physics_process(_delta):
 	# Decidir acción
-	if global_position.distance_to(perro.position) <= RANGO_PERRO:
-		movimineto = Movimiento.HUIR
-	elif position.distance_to(target_pos) <= RANGO_LLEGADA:
-		movimineto = Movimiento.QUIETO
-	else:
-		movimineto = Movimiento.ANDAR
+	if not movimineto == Movimiento.DORMIR:
+		if global_position.distance_to(perro.position) <= RANGO_PERRO:
+			movimineto = Movimiento.HUIR
+		elif position.distance_to(target_pos) <= RANGO_LLEGADA:
+			movimineto = Movimiento.QUIETO
+		else:
+			movimineto = Movimiento.ANDAR
 	
 	# Hacer movimiento
-	if movimineto == Movimiento.QUIETO:
+	if movimineto == Movimiento.DORMIR or movimineto == Movimiento.QUIETO:
 		velocity = Vector2.ZERO
 	elif movimineto == Movimiento.ANDAR:
 		velocity = position.direction_to(target_pos) * VEL_ANDAR
@@ -54,8 +55,14 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func select_new_target():
-	var dist = randf() * RANGO_TARGET
-	var dir = Vector2.RIGHT.rotated(2*PI*randf())
-	target_pos = dir * dist
-	$Timer.start(randf_range(TIMER_MIN, TIMER_MAX))
+	if movimineto != Movimiento.DORMIR:
+		var dist = randf() * RANGO_TARGET
+		var dir = Vector2.RIGHT.rotated(2*PI*randf())
+		target_pos = dir * dist
+		$Timer.start(randf_range(TIMER_MIN, TIMER_MAX))
 
+func dormir():
+	movimineto = Movimiento.DORMIR
+
+func despertar():
+	movimineto = Movimiento.QUIETO
