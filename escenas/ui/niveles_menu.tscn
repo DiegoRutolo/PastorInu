@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqf352c6js7dg"]
+
+[ext_resource type="Texture2D" uid="uid://w0xkwprwxdu5" path="res://assets/sprites/grass_1.png" id="1_bukj5"]
+[ext_resource type="Theme" uid="uid://s0edko7gppuj" path="res://assets/themes/menu_theme.tres" id="1_mp61d"]
+[ext_resource type="Script" path="res://escenas/ui/niveles_menu.gd" id="2_m05qm"]
+
+[node name="NivelesMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mp61d")
+script = ExtResource("2_m05qm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.34902, 0.478431, 0.513726, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bukj5")
+stretch_mode = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.0
+offset_right = 15.0
+offset_bottom = 45.0
+grow_horizontal = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer2/CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.5
+offset_top = -40.0
+offset_right = 47.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Salir" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Salir"
+
+[node name="Back" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Atrás"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]
