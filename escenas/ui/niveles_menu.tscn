@@ -41,6 +41,10 @@ layout_mode = 2
 [node name="GridContainer" type="GridContainer" parent="MarginContainer2/CenterContainer"]
 layout_mode = 2
 
+[node name="Nivel1" type="Button" parent="MarginContainer2/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Nivel 1"
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -68,5 +72,6 @@ text = "Salir"
 layout_mode = 2
 text = "Atrás"
 
+[connection signal="pressed" from="MarginContainer2/CenterContainer/GridContainer/Nivel1" to="." method="_on_nivel_1_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]

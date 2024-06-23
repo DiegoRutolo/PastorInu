@@ -6,6 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_k6off"]
 
 [node name="Oveja" type="CharacterBody2D"]
+scale = Vector2(0.693979, 0.693979)
+collision_layer = 4
+collision_mask = 15
 motion_mode = 1
 script = ExtResource("1_47gma")
 
