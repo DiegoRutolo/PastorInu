@@ -37,7 +37,8 @@ func _ready():
 	target_pos = position
 
 func _physics_process(_delta):
-	if Input.is_action_just_pressed("right_click"):
+	if Input.is_action_pressed("right_click"):
+	#if Input.is_action_just_pressed("right_click"):
 		click_pos = get_global_mouse_position()
 	
 	if position.distance_to(click_pos) <= LIM_QUIETO:

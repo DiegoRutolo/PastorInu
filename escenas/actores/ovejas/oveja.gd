@@ -2,9 +2,9 @@ class_name Oveja
 extends CharacterBody2D
 
 # Velocidad al andar
-const VEL_ANDAR = 40
+const VEL_ANDAR = 20
 # Velocidad al correr
-const VEL_CORRER = 85
+const VEL_CORRER = 65
 
 enum Movimiento {QUIETO, ANDAR, HUIR, DORMIR}
 var movimineto: Movimiento = Movimiento.QUIETO

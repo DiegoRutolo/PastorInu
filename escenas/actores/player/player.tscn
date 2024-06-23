@@ -15,3 +15,10 @@ texture = ExtResource("1_4k28g")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3.21087, 3.21087)
 shape = SubResource("CircleShape2D_bt775")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.6, 1.6)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
