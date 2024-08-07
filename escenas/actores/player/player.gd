@@ -72,7 +72,7 @@ func mover():
 	# Animación
 	#$AnimatedSprite2D.stop()
 	if velocity == Vector2.ZERO:
-		pass
+		$AnimatedSprite2D.play("sit")
 	elif velocity.angle() < ARRIBA_DERECHA and velocity.angle() > ARRIBA_IZQUIERDA:
 		$AnimatedSprite2D.play("walk_up")
 	elif velocity.angle() > ABAJO_DERECHA and velocity.angle() < ABAJO_IZQUIERDA:
