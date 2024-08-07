@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5sfk18wskcws"
-path="res://.godot/imported/dogHead_1.jpg-4e2f789ad70c5ee7b995a2e7e2aca7b5.ctex"
+path="res://.godot/imported/dogHead_1.jpg-9cf4ddf030ac12d6e39bb2b3039b2d01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dogHead_1.jpg"
-dest_files=["res://.godot/imported/dogHead_1.jpg-4e2f789ad70c5ee7b995a2e7e2aca7b5.ctex"]
+source_file="res://assets/sprites/dogs/dogHead_1.jpg"
+dest_files=["res://.godot/imported/dogHead_1.jpg-9cf4ddf030ac12d6e39bb2b3039b2d01.ctex"]
 
 [params]
 

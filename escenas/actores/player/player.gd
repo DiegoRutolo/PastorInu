@@ -14,6 +14,13 @@ const VEL_CORRER = 170
 # Velocidad al esprintar
 const VEL_SPRINT = 320
 
+# Definicion de los ángulos para las animaciones.
+const CORTE_VERTICAL: float = 0.4
+var ARRIBA_DERECHA: float = Vector2.UP.angle() + CORTE_VERTICAL
+var ARRIBA_IZQUIERDA: float = Vector2.UP.angle() - CORTE_VERTICAL
+var ABAJO_DERECHA: float = Vector2.DOWN.angle() - CORTE_VERTICAL
+var ABAJO_IZQUIERDA: float = Vector2.DOWN.angle() + CORTE_VERTICAL
+
 enum Movimiento {QUIETO, ANDAR, CORRER, SPRINT}
 var movimineto: Movimiento = Movimiento.QUIETO:
 	get:
@@ -61,4 +68,19 @@ func mover():
 		velocity = position.direction_to(target_pos) * VEL_CORRER
 	elif movimineto == Movimiento.SPRINT:
 		velocity = position.direction_to(target_pos) * VEL_SPRINT
+	
+	# Animación
+	#$AnimatedSprite2D.stop()
+	if velocity == Vector2.ZERO:
+		pass
+	elif velocity.angle() < ARRIBA_DERECHA and velocity.angle() > ARRIBA_IZQUIERDA:
+		$AnimatedSprite2D.play("walk_up")
+	elif velocity.angle() > ABAJO_DERECHA and velocity.angle() < ABAJO_IZQUIERDA:
+		$AnimatedSprite2D.play("walk_down")
+	elif velocity.angle() >= ARRIBA_DERECHA and velocity.angle() <= ABAJO_DERECHA:
+		$AnimatedSprite2D.play("walk_right")
+	elif velocity.angle() >= ABAJO_IZQUIERDA or velocity.angle() <= ARRIBA_IZQUIERDA:
+		$AnimatedSprite2D.play("walk_left")
+	
 	move_and_slide()
+
