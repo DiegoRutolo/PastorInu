@@ -60,27 +60,21 @@ func _physics_process(_delta):
 	mover()
 
 func mover():
+	$AnimationTree.set("parameters/walk/blend_position", velocity)
+	var state_machine: AnimationNodeStateMachinePlayback = $AnimationTree.get("parameters/playback")
+	
 	if movimineto == Movimiento.QUIETO:
 		velocity = Vector2.ZERO
+		state_machine.travel("sit")
 	elif movimineto == Movimiento.ANDAR:
 		velocity = position.direction_to(target_pos) * VEL_ANDAR
+		state_machine.travel("walk")
 	elif movimineto == Movimiento.CORRER:
 		velocity = position.direction_to(target_pos) * VEL_CORRER
+		state_machine.travel("walk")
 	elif movimineto == Movimiento.SPRINT:
 		velocity = position.direction_to(target_pos) * VEL_SPRINT
-	
-	# Animación
-	#$AnimatedSprite2D.stop()
-	if velocity == Vector2.ZERO:
-		$AnimatedSprite2D.play("sit")
-	elif velocity.angle() < ARRIBA_DERECHA and velocity.angle() > ARRIBA_IZQUIERDA:
-		$AnimatedSprite2D.play("walk_up")
-	elif velocity.angle() > ABAJO_DERECHA and velocity.angle() < ABAJO_IZQUIERDA:
-		$AnimatedSprite2D.play("walk_down")
-	elif velocity.angle() >= ARRIBA_DERECHA and velocity.angle() <= ABAJO_DERECHA:
-		$AnimatedSprite2D.play("walk_right")
-	elif velocity.angle() >= ABAJO_IZQUIERDA or velocity.angle() <= ARRIBA_IZQUIERDA:
-		$AnimatedSprite2D.play("walk_left")
+		state_machine.travel("walk")
 	
 	move_and_slide()
 
