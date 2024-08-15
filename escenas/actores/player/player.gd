@@ -38,6 +38,8 @@ var click_pos: Vector2
 # Posición hacia la que el perro intenta moverse.
 var target_pos: Vector2
 
+@onready var animation_tree: AnimationTree = $AnimationTree
+
 func _ready():
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	click_pos = position
@@ -60,8 +62,8 @@ func _physics_process(_delta):
 	mover()
 
 func mover():
-	$AnimationTree.set("parameters/walk/blend_position", velocity)
-	var state_machine: AnimationNodeStateMachinePlayback = $AnimationTree.get("parameters/playback")
+	animation_tree.set("parameters/walk/blend_position", velocity)
+	var state_machine: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/playback")
 	
 	if movimineto == Movimiento.QUIETO:
 		velocity = Vector2.ZERO
