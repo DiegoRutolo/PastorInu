@@ -1862,3 +1862,6 @@ position = Vector2(292, 195)
 
 [node name="Oveja" parent="Ovejas" node_paths=PackedStringArray("perro") instance=ExtResource("2_dbft1")]
 perro = NodePath("../../Player")
+
+[connection signal="oveja_entra" from="Alpendre" to="." method="_on_alpendre_oveja_entra"]
+[connection signal="oveja_sale" from="Alpendre" to="." method="_on_alpendre_oveja_sale"]
